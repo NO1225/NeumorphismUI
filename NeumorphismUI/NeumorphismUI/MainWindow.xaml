@@ -1,0 +1,103 @@
+﻿<Window x:Class="NeumorphismUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NeumorphismUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="{DynamicResource MainBackGroundBrush}">
+        <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
+            <Border CornerRadius="200" Margin="20">
+                <Border.Effect>
+                    <DropShadowEffect Direction="135" 
+                                      Color="{DynamicResource LightShadow}" 
+                                      ShadowDepth="{StaticResource ShadowDepth}"
+                                      BlurRadius="{StaticResource BlurRadius}"
+                                      />
+                </Border.Effect>
+                <Border 
+                    Width="200" 
+                    Height="200" 
+                    CornerRadius="200"
+                    Background="#E0E5EC"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
+                    <Border.Effect>
+                        <DropShadowEffect 
+                            Color="{DynamicResource DarkShadow}" 
+                            ShadowDepth="{StaticResource ShadowDepth}" 
+                            BlurRadius="{StaticResource BlurRadius}"/>
+                    </Border.Effect>
+
+                    <TextBlock 
+                    Foreground="{DynamicResource MainForeGroundBrush}"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">Not Pressed</TextBlock>
+                </Border>
+            </Border>
+
+            <Grid 
+                x:Name="conainer"
+                Margin="20" 
+                Width="100" Height="100"
+                >
+                <Grid  Margin="-6">
+
+                    <Grid.Clip >
+                        <RectangleGeometry 
+                            RadiusX="5"
+                            RadiusY="5"
+                            Rect="{Binding ElementName=conainer,
+                            Converter={local:WidthHeightToRectangleConverter}, Mode=OneWay}"/>
+                    </Grid.Clip>
+
+                    <Rectangle                         
+                        Stroke="{DynamicResource MainBackGroundBrush}"
+                        StrokeThickness="4" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect 
+                                Color="{DynamicResource DarkShadow}" 
+                                ShadowDepth="{StaticResource ShadowDepth}"
+                                BlurRadius="{StaticResource BlurRadius}"/>
+                        </Rectangle.Effect>
+
+
+                    </Rectangle>
+                    <Rectangle
+                        
+                        Stroke="{DynamicResource MainBackGroundBrush}"
+                        StrokeThickness="6" >
+                        <Rectangle.Effect>
+                            <DropShadowEffect 
+                                Direction="135" 
+                                Color="{DynamicResource LightShadow}" 
+                                ShadowDepth="{StaticResource ShadowDepth}"
+                                BlurRadius="{StaticResource BlurRadius}"/>
+                        </Rectangle.Effect>
+
+                    </Rectangle>
+
+                    <Border Margin="10">
+                        <TextBlock 
+                            Foreground="{DynamicResource MainForeGroundBrush}"
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center">Pressed</TextBlock>
+                    </Border>
+                </Grid>
+            </Grid>
+
+            <Button 
+            Style="{DynamicResource NeumorphismButtonStyle}" 
+            Width="100" Height="100" Margin="20" 
+            >Click Me</Button>
+
+        </StackPanel>
+        
+
+        <Button 
+            Style="{DynamicResource NeumorphismButtonStyle}" 
+            Width="100" Height="50" Margin="20" 
+            VerticalAlignment="Bottom" >Click Me</Button>
+    </Grid>
+</Window>
