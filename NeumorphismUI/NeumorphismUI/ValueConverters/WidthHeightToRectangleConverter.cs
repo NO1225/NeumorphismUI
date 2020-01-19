@@ -12,7 +12,7 @@ namespace NeumorphismUI
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var control = value as Grid;
+            var control = value as FrameworkElement;
 
             if (control == null)
                 return null;
