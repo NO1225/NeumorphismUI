@@ -11,20 +11,9 @@
             <Border Width="200" 
                     Height="200"  CornerRadius="200" Margin="20">
                 <Border.Effect>
-                    <DropShadowEffect Direction="135" 
-                                      Color="{DynamicResource LightShadow}" 
-                                      ShadowDepth="{StaticResource ShadowDepth}"
-                                      BlurRadius="{StaticResource BlurRadius}"
-                                      />
+                    <DropShadowEffect Direction="135" Color="{DynamicResource LightShadow}" ShadowDepth="{StaticResource ShadowDepth}" BlurRadius="{StaticResource BlurRadius}"/>
                 </Border.Effect>
-                <Border 
-                    Width="200" 
-                    Height="200" 
-                    BorderThickness="0.1"
-                    CornerRadius="200"
-                    Background="#E0E5EC"
-                    HorizontalAlignment="Center" 
-                    VerticalAlignment="Center">
+                <Border Width="200" Height="200" BorderThickness="0.1" CornerRadius="200" Background="{DynamicResource MainBackGroundBrush}" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Border.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <LinearGradientBrush.RelativeTransform>
@@ -40,24 +29,14 @@
                         </LinearGradientBrush>
                     </Border.BorderBrush>
                     <Border.Effect>
-                        <DropShadowEffect 
-                            Color="{DynamicResource DarkShadow}" 
-                            ShadowDepth="{StaticResource ShadowDepth}" 
-                            BlurRadius="{StaticResource BlurRadius}"/>
+                        <DropShadowEffect Color="{DynamicResource DarkShadow}" ShadowDepth="{StaticResource ShadowDepth}" BlurRadius="{StaticResource BlurRadius}"/>
                     </Border.Effect>
 
-                    <TextBlock 
-                    Foreground="{DynamicResource MainForeGroundBrush}"
-                    HorizontalAlignment="Center" 
-                    VerticalAlignment="Center">Not Pressed</TextBlock>
+                    <TextBlock Foreground="{DynamicResource MainForeGroundBrush}" HorizontalAlignment="Center" VerticalAlignment="Center">Not Pressed</TextBlock>
                 </Border>
             </Border>
 
-            <Border 
-                x:Name="conainer"
-                Margin="20" 
-                Width="100" Height="100"
-                >
+            <Border x:Name="conainer" Margin="20" Width="100" Height="100">
                 <Border>
                     <Border.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -76,60 +55,35 @@
                     <Grid  Margin="-6">
 
                         <Grid.Clip >
-                            <RectangleGeometry 
-                            RadiusX="5"
-                            RadiusY="5"
-                            Rect="{Binding ElementName=conainer,
-                            Converter={local:WidthHeightToRectangleConverter}, Mode=OneWay}"/>
+                            <RectangleGeometry RadiusX="5" RadiusY="5" Rect="{Binding ElementName=conainer, Converter={local:WidthHeightToRectangleConverter}, Mode=OneWay}"/>
                         </Grid.Clip>
 
-                        <Rectangle                         
-                        Stroke="{DynamicResource MainBackGroundBrush}"
-                        StrokeThickness="4" >
+                        <Rectangle Stroke="{DynamicResource MainBackGroundBrush}" StrokeThickness="4" >
                             <Rectangle.Effect>
-                                <DropShadowEffect 
-                                Color="{DynamicResource DarkShadow}" 
-                                ShadowDepth="{StaticResource ShadowDepth}"
-                                BlurRadius="{StaticResource BlurRadius}"/>
+                                <DropShadowEffect Color="{DynamicResource DarkShadow}" ShadowDepth="{StaticResource ShadowDepth}" BlurRadius="{StaticResource BlurRadius}"/>
                             </Rectangle.Effect>
 
 
                         </Rectangle>
-                        <Rectangle
-                        
-                        Stroke="{DynamicResource MainBackGroundBrush}"
-                        StrokeThickness="6" >
+                        <Rectangle Stroke="{DynamicResource MainBackGroundBrush}" StrokeThickness="6" >
                             <Rectangle.Effect>
-                                <DropShadowEffect 
-                                Direction="135" 
-                                Color="{DynamicResource LightShadow}" 
-                                ShadowDepth="{StaticResource ShadowDepth}"
-                                BlurRadius="{StaticResource BlurRadius}"/>
+                                <DropShadowEffect Direction="135" Color="{DynamicResource LightShadow}" ShadowDepth="{StaticResource ShadowDepth}" BlurRadius="{StaticResource BlurRadius}"/>
                             </Rectangle.Effect>
 
                         </Rectangle>
 
                         <Border Margin="10">
-                            <TextBlock 
-                            Foreground="{DynamicResource MainForeGroundBrush}"
-                            HorizontalAlignment="Center" 
-                            VerticalAlignment="Center">Pressed</TextBlock>
+                            <TextBlock Foreground="{DynamicResource MainForeGroundBrush}" HorizontalAlignment="Center" VerticalAlignment="Center">Pressed</TextBlock>
                         </Border>
                     </Grid>
                 </Border>
             </Border>
 
-            <Button 
-            Style="{DynamicResource NeumorphismButtonStyle}" 
-            Width="100" Height="100" Margin="20" 
-            >Click Me</Button>
+            <Button Style="{DynamicResource NeumorphismButtonStyle}" Width="100" Height="100" Margin="20">Click Me</Button>
 
         </StackPanel>
         
 
-        <Button 
-            Style="{DynamicResource NeumorphismButtonStyle}" 
-            Width="100" Height="50" Margin="20" 
-            VerticalAlignment="Bottom" >Click Me</Button>
+        <Button Style="{DynamicResource NeumorphismButtonStyle}" Width="100" Height="50" Margin="20" VerticalAlignment="Bottom" >Click Me</Button>
     </Grid>
 </Window>

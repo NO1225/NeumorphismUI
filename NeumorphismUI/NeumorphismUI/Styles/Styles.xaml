@@ -17,7 +17,7 @@
     <SolidColorBrush x:Key="MainForeGroundBrush" Color="{DynamicResource MainForeGround}"/>
 
     <!-- Shadow properties -->
-    <system:Double x:Key="ShadowDepth">7</system:Double>
+    <system:Double x:Key="ShadowDepth">8</system:Double>
     <system:Double x:Key="BlurRadius">18</system:Double>
 
     <!-- Button style -->
@@ -38,19 +38,11 @@
                             <Border CornerRadius="5" >
 
                                 <Border.Effect>
-                                    <DropShadowEffect Direction="135" 
-                                                                      Color="{DynamicResource LightShadow}" 
-                                                                      ShadowDepth="{StaticResource ShadowDepth}"
-                                                                      BlurRadius="{StaticResource BlurRadius}"/>
+                                    <DropShadowEffect Direction="135" Color="{DynamicResource LightShadow}" ShadowDepth="{StaticResource ShadowDepth}" BlurRadius="{StaticResource BlurRadius}"/>
                                 </Border.Effect>
-                                <Border 
-                                                    CornerRadius="5"
-                                                    Background="{TemplateBinding Background}"                                                     
-                                                    SnapsToDevicePixels="true">
+                                <Border CornerRadius="5" Background="{TemplateBinding Background}">
                                     <Border.Effect>
-                                        <DropShadowEffect Color="{DynamicResource DarkShadow}" 
-                                                                          ShadowDepth="{StaticResource ShadowDepth}"
-                                                                          BlurRadius="{StaticResource BlurRadius}"/>
+                                        <DropShadowEffect Color="{DynamicResource DarkShadow}" ShadowDepth="{StaticResource ShadowDepth}" BlurRadius="{StaticResource BlurRadius}"/>
                                     </Border.Effect>
                                     
 
@@ -61,41 +53,25 @@
                         <ContentControl x:Name="pressedBackground" Visibility="Hidden">
                             <Grid Background="{TemplateBinding Background}"  Margin="-6">
                                 <Grid.Clip >
-                                    <RectangleGeometry 
-                                                        RadiusX="5"
-                                                        RadiusY="5"
-                                                        Rect="{Binding ElementName=container,
-                                                        Converter={local:WidthHeightToRectangleConverter}, Mode=OneWay}"/>
+                                    <RectangleGeometry RadiusX="5" RadiusY="5" Rect="{Binding ElementName=container, Converter={local:WidthHeightToRectangleConverter}, Mode=OneWay}"/>
                                 </Grid.Clip>
-                                <Rectangle                         
-                                                    Stroke="{TemplateBinding Background}"
-                                                    StrokeThickness="4" >
+                                <Rectangle Stroke="{TemplateBinding Background}" StrokeThickness="4" >
                                     <Rectangle.Effect>
-                                        <DropShadowEffect 
-                                                            Color="{DynamicResource DarkShadow}" 
-                                                            ShadowDepth="{StaticResource ShadowDepth}"
-                                                            BlurRadius="{StaticResource BlurRadius}"/>
+                                        <DropShadowEffect Color="{DynamicResource DarkShadow}" ShadowDepth="{StaticResource ShadowDepth}" BlurRadius="{StaticResource BlurRadius}"/>
                                     </Rectangle.Effect>
 
 
                                 </Rectangle>
-                                <Rectangle
-                        
-                                                    Stroke="{TemplateBinding Background}"
-                                                    StrokeThickness="6" >
+                                <Rectangle Stroke="{TemplateBinding Background}" StrokeThickness="6" >
                                     <Rectangle.Effect>
-                                        <DropShadowEffect 
-                                                            Direction="135" 
-                                                            Color="{DynamicResource LightShadow}" 
-                                                            ShadowDepth="{StaticResource ShadowDepth}"
-                                                            BlurRadius="{StaticResource BlurRadius}"/>
+                                        <DropShadowEffect Direction="135" Color="{DynamicResource LightShadow}" ShadowDepth="{StaticResource ShadowDepth}" BlurRadius="{StaticResource BlurRadius}"/>
                                     </Rectangle.Effect>
 
                                 </Rectangle>
                             </Grid>
                         </ContentControl>
 
-                        <Border x:Name="border" BorderThickness="0.1">
+                        <Border x:Name="border" CornerRadius="5" BorderThickness="0.1">
                             <Border.BorderBrush>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <LinearGradientBrush.RelativeTransform>
@@ -110,14 +86,7 @@
                                     <GradientStop  Color="{DynamicResource LightShadow}" Offset="1"/>
                                 </LinearGradientBrush>
                             </Border.BorderBrush>
-                            <ContentPresenter 
-                                                x:Name="contentPresenter" 
-                                                Focusable="False" 
-                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                                Margin="{TemplateBinding Padding}" 
-                                                RecognizesAccessKey="True" 
-                                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                     </Grid>
 
